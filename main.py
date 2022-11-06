@@ -4,7 +4,7 @@ import PyTerm
 
 class DiscordTagSniper:
     def __init__(self) -> None:
-        self.tries = 0
+        self.attempts = 0
 
         self.token = str(input("Discord Token: "))
         self.password = str(input("Discord Password: "))
@@ -28,18 +28,18 @@ class DiscordTagSniper:
         )
 
         if r.status_code == 200:
-            print(f"[+] Sniped Tag: {self.tag} | Tries: {self.tries}")
-            self.tries += 1
-            PyTerm.Console.set_title(f"Discord Tag Sniper | Tries: {self.tries}")
+            self.attempts += 1
+            print(f"[+] Sniped Tag: {self.tag} | Tries: {self.attempts}")
+            PyTerm.Console.set_title(f"Discord Tag Sniper | Tries: {self.attempts}")
             print("Press any key to exit...")
             PyTerm.Console.get_char()
         elif r.status_code == 400:
-            self.tries += 1
-            PyTerm.Console.set_title(f"Discord Tag Sniper | Tries: {self.tries}")
+            self.attempts += 1
+            PyTerm.Console.set_title(f"Discord Tag Sniper | Tries: {self.attempts}")
         else:
+            self.attempts += 1
             print(f"[-] {r.json()}")
-            self.tries += 1
-            PyTerm.Console.set_title(f"Discord Tag Sniper | Tries: {self.tries}")
+            PyTerm.Console.set_title(f"Discord Tag Sniper | Tries: {self.attempts}")
 
 
     async def check_user(self):
