@@ -29,17 +29,17 @@ class DiscordTagSniper:
 
         if r.status_code == 200:
             self.attempts += 1
-            print(f"[+] Sniped Tag: {self.tag} | Tries: {self.attempts}")
-            PyTerm.Console.set_title(f"Discord Tag Sniper | Tries: {self.attempts}")
+            print(f"[+] Sniped Tag: {self.tag} | Attempts: {self.attempts}")
+            PyTerm.Console.set_title(f"Discord Tag Sniper | Attempts: {self.attempts}")
             print("Press any key to exit...")
             PyTerm.Console.get_char()
         elif r.status_code == 400:
             self.attempts += 1
-            PyTerm.Console.set_title(f"Discord Tag Sniper | Tries: {self.attempts}")
+            PyTerm.Console.set_title(f"Discord Tag Sniper | Attempts: {self.attempts}")
         else:
             self.attempts += 1
             print(f"[-] {r.json()}")
-            PyTerm.Console.set_title(f"Discord Tag Sniper | Tries: {self.attempts}")
+            PyTerm.Console.set_title(f"Discord Tag Sniper | Attempts: {self.attempts}")
 
 
     async def check_user(self):
