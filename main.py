@@ -28,7 +28,7 @@ class DiscordTagSniper:
         )
 
         if r.status_code == 200:
-            print(f"[+] Sniped Tag: {self.tag}")
+            print(f"[+] Sniped Tag: {self.tag} | Tries: {self.tries}")
             self.tries += 1
             PyTerm.Console.set_title(f"Discord Tag Sniper | Tries: {self.tries}")
             print("Press any key to exit...")
