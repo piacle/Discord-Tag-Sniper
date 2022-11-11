@@ -49,6 +49,7 @@ class DiscordTagSniper:
 
     async def start(self):
         while True:
+            asyncio.sleep(2)
             info = await self.check_user()
             if info[0] != self.username or info[1] != self.discriminator:
                 await self.claim_user()
