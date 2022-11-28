@@ -64,6 +64,8 @@ if __name__ == "__main__":
     [Thread(target=run, args=[a.check_user()], daemon=True).start() for _ in range(t)]
     while True:
         if a.claimed == True:
-            break
+            print("[^] Press any key to exit")
+            Console.get_char()
+            raise SystemExit
         else:
             pass
