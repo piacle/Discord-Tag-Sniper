@@ -2,9 +2,10 @@ from asyncio import run, sleep
 from PyTerm import Console
 from httpx import AsyncClient
 from threading import Thread
+
 class DiscordTagSniper:
     def __init__(self) -> None:
-        self.requests, self.ratelimits, self.errors, self.claimed, self.tokens, self.main_token, self.password, self.tag, self.client, self.uid = 0, 0, 0, False, open(input("[^] Path for tha tokens > ")).readlines(), input("[^] Your main token > "), input("[^] Your password > "), input("[^] Their tag > "), AsyncClient(), input("[^] Their ID > ")
+        self.requests, self.ratelimits, self.errors, self.claimed, self.tokens, self.main_token, self.password, self.tag, self.client, self.uid = 0, 0, 0, False, open(input("[^] Path to the tokens > ")).readlines(), input("[^] Your main token > "), input("[^] Your password > "), input("[^] Their tag > "), AsyncClient(), input("[^] Their ID > ")
         self.username, self.discriminator = self.tag.split("#")[0], self.tag.split("#")[1]
 
     async def set_title(self):
